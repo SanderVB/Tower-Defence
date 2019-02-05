@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
 
-    [SerializeField] List<Waypoint> path;
-
 	// Use this for initialization
 	void Start ()
     {
-        StartCoroutine(FollowPath());
+        Pathfinder pathfinder = FindObjectOfType<Pathfinder>();
+        var route = pathfinder.GetPath();
+        StartCoroutine(FollowPath(route));
 	}
 	
 	// Update is called once per frame
@@ -17,13 +17,13 @@ public class EnemyController : MonoBehaviour {
     {
 	}
 
-    IEnumerator FollowPath()
+    IEnumerator FollowPath(List<Waypoint> path)
     {
         Debug.Log("Starting route");
-        foreach(Waypoint wayPoint in path)
+        foreach (Waypoint wayPoint in path)
         {
             transform.position = wayPoint.transform.position;
-            Debug.Log("Position is: " + transform.position.x/10 +","+ transform.position.z/10);
+            Debug.Log("Position is: " + transform.position.x / 10 + "," + transform.position.z / 10);
             yield return new WaitForSeconds(1f);
         }
         Debug.Log("Route finished");
