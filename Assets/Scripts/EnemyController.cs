@@ -22,14 +22,11 @@ public class EnemyController : MonoBehaviour {
 
     IEnumerator FollowPath(List<Waypoint> path)
     {
-        Debug.Log("Starting route");
         foreach (Waypoint wayPoint in path)
         {
             transform.position = wayPoint.transform.position;
-            Debug.Log("Position is: " + transform.position.x / 10 + "," + transform.position.z / 10);
             yield return new WaitForSeconds(1f);
         }
-        Debug.Log("Route finished");
     }
 
     private void OnParticleCollision(GameObject other)

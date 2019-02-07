@@ -21,24 +21,38 @@ public class Pathfinder : MonoBehaviour {
 
     public List<Waypoint> GetPath()
     {
-        LoadBlocks();
-        ColorStartAndEndBlocks();
-        BreadthFirstSearch();
-        CreatePath();
+        if (path.Count == 0)
+        {
+            CalculatePath();
+        }
+
         return path;
     }
-    
+
+    private void CalculatePath()
+    {
+        LoadBlocks();
+        BreadthFirstSearch();
+        CreatePath();
+    }
+
     private void CreatePath()
     {
-        path.Add(endPoint);
+        SetAsPath(endPoint);
         Waypoint previousPoint = endPoint.foundFrom;
-        while(previousPoint!=startPoint)
+        while (previousPoint != startPoint)
         {
-            path.Add(previousPoint);
+            SetAsPath(previousPoint);
             previousPoint = previousPoint.foundFrom;
         }
-        path.Add(startPoint);
+        SetAsPath(startPoint);
         path.Reverse();
+    }
+
+    private void SetAsPath(Waypoint waypoint)
+    {
+        path.Add(waypoint);
+        waypoint.isPlaceable = false;
     }
 
     private void LoadBlocks()
@@ -60,12 +74,6 @@ public class Pathfinder : MonoBehaviour {
         }
     }
 
-    private void ColorStartAndEndBlocks() //TODO put in waypoint
-    {
-        startPoint.SetTopColor(Color.green);
-        endPoint.SetTopColor(Color.red);
-    }
-
     private void BreadthFirstSearch()
     {
         queue.Enqueue(startPoint);
@@ -73,8 +81,6 @@ public class Pathfinder : MonoBehaviour {
         while (queue.Count > 0 && isRunning)
         {
             searchCenter = queue.Dequeue();
-
-            //print("Searching from: " + searchCenter); //remove later
 
             if (searchCenter == endPoint)
                 EndFound();
@@ -95,7 +101,6 @@ public class Pathfinder : MonoBehaviour {
             if(grid.ContainsKey(neighbourCoordinates))
             {
                 QueueNewNeighbours(neighbourCoordinates);
-                print("Exploring " + neighbourCoordinates);
             }
         }
     }
@@ -106,20 +111,16 @@ public class Pathfinder : MonoBehaviour {
         if (neighbour.isExplored || queue.Contains(neighbour))
         {
             //do nothing
-
         }
         else
         {
-            neighbour.SetTopColor(Color.blue);
             queue.Enqueue(neighbour);
             neighbour.foundFrom = searchCenter;
-            print("Queuing: " + neighbour);
         }
     }
 
     private void EndFound()
     {
-        print("End reached: " + searchCenter);
         isRunning = false;
     }
 }

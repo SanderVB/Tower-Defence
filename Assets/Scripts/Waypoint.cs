@@ -9,6 +9,7 @@ public class Waypoint : MonoBehaviour {
 
     //can be public since it's a data class
     public bool isExplored = false;
+    public bool isPlaceable = true;
     bool colorChanged = false;
     [SerializeField] Color activatedColor = Color.blue;
 
@@ -19,12 +20,6 @@ public class Waypoint : MonoBehaviour {
         return gridSize;
     }
 
-    private void Update()
-    {
-        if (isExplored && !colorChanged)
-            SetTopColor(activatedColor);
-    }
-
     public Vector2Int GetGridPos()
     {
         return new Vector2Int(
@@ -32,10 +27,9 @@ public class Waypoint : MonoBehaviour {
             Mathf.RoundToInt(transform.position.z / gridSize));
     }
 
-    public void SetTopColor(Color color)
+    private void OnMouseOver()
     {
-        MeshRenderer topMeshRenderer = transform.Find("Top").GetComponent<MeshRenderer>();
-        topMeshRenderer.material.color = color;
-        colorChanged = true;
+        if(Input.GetMouseButtonDown(0) && isPlaceable)
+            Debug.Log(gameObject + ": " + GetGridPos());
     }
 }

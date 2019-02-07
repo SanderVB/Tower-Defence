@@ -11,12 +11,10 @@ public class ProjectileHandler : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        //TODO: instantiates at 0,0,0 with terrain-collision;
         if (!hit)
         {
             hit = true;
             var laserFX = Instantiate(projectileExplosion, other.transform.position, Quaternion.identity);
-            Debug.Log("Col. pos.: " + other.transform.position);
             Destroy(laserFX, destroyTimer);
         }
     }
