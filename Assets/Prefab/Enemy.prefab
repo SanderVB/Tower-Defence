@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4509073263989404}
   - component: {fileID: 114928941493846108}
+  - component: {fileID: 65694057463762544}
+  - component: {fileID: 54863936988425630}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -38,7 +40,7 @@ GameObject:
   - component: {fileID: 33717131876139238}
   - component: {fileID: 23610482968409718}
   m_Layer: 0
-  m_Name: Enemy_A
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +65,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1075638931591198}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -113,6 +115,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1945975605094330}
   m_Mesh: {fileID: 4300000, guid: 042c32b34794f584aa882ba5397f2c19, type: 3}
+--- !u!54 &54863936988425630
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1075638931591198}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &65694057463762544
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1075638931591198}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 5, z: 5}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!114 &114928941493846108
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -124,3 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e3759cba37fcf48a94c9e970543a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 3
+  destroyTimer: 1
+  enemyValue: 1
+  deathEffect: {fileID: 1469142659871422, guid: ab79a37535b979f48b6de56e3a0a5cb0,
+    type: 2}
