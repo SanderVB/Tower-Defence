@@ -52,5 +52,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDelay: 5
+  numberToSpawn: 25
   enemyPrefab: {fileID: 114928941493846108, guid: 2dabc806ba9a8af49b4563440d28f4dc,
     type: 2}
