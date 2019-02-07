@@ -11,7 +11,7 @@ public class Waypoint : MonoBehaviour {
     public bool isExplored = false;
     public bool isPlaceable = true;
     bool colorChanged = false;
-    [SerializeField] Color activatedColor = Color.blue;
+    [SerializeField] TowerController towerPrefab;
 
     public Waypoint foundFrom;
 
@@ -27,9 +27,12 @@ public class Waypoint : MonoBehaviour {
             Mathf.RoundToInt(transform.position.z / gridSize));
     }
 
-    private void OnMouseOver()
-    {
-        if(Input.GetMouseButtonDown(0) && isPlaceable)
-            Debug.Log(gameObject + ": " + GetGridPos());
-    }
+    //this is part of the tutorial but I liked having the turrets on the side.
+    //private void OnMouseOver()
+    //{
+    //    if(Input.GetMouseButtonDown(0) && isPlaceable)
+    //    {
+    //        Instantiate(towerPrefab, transform.position, transform.rotation);
+    //    }
+    //}
 }

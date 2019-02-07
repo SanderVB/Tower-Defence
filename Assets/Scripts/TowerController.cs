@@ -17,7 +17,6 @@ public class TowerController : MonoBehaviour {
     private void Update()
     {
         TargetEnemy();
-        CheckTargetDistance();
     }
 
     private void TargetEnemy()
