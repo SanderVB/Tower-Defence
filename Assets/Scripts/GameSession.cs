@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameSession : MonoBehaviour {
 
-    [SerializeField] int playerHealth = 3, towerLimit = 5;
+    [SerializeField] int playerHealth = 3;
     int score;
 
     private void Awake()
@@ -35,11 +35,6 @@ public class GameSession : MonoBehaviour {
             //show lose screen
         }
         FindObjectOfType<HealthDisplay>().UpdateHealthDisplay(playerHealth);
-    }
-
-    public bool GetTurretAllowance()
-    {
-        return FindObjectsOfType<TowerController>().Length < towerLimit; //count number of active towers and give permission to place another one if it's below the set limit
     }
 
     public int GetScore()

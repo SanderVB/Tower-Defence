@@ -37,7 +37,8 @@ public class EnemyController : MonoBehaviour {
     private void Update()
     {
         gameObject.transform.LookAt(targetWaypoint.transform);
-        FollowRoute();
+        if(!isDying)
+            FollowRoute();
     }
 
     private void LateUpdate()

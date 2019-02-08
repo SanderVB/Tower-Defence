@@ -153,8 +153,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e3759cba37fcf48a94c9e970543a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  maxHealth: 3
   destroyTimer: 1
-  enemyValue: 1
+  scoreValue: 1
+  damageValue: 1
   deathEffect: {fileID: 1469142659871422, guid: ab79a37535b979f48b6de56e3a0a5cb0,
     type: 2}
+  moveSpeed: 10
+  healthBar: {fileID: 0}
+  barHolder: {fileID: 0}
+  targetWaypoint: {fileID: 0}
+  step: 0
+  distance: 0

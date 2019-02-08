@@ -407,7 +407,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 3
   destroyTimer: 1
-  enemyValue: 1
+  scoreValue: 1
+  damageValue: 1
   deathEffect: {fileID: 1469142659871422, guid: ab79a37535b979f48b6de56e3a0a5cb0,
     type: 2}
   moveSpeed: 10
