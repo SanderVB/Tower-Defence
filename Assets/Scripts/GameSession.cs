@@ -21,6 +21,22 @@ public class GameSession : MonoBehaviour {
         }
     }
 
+    public int GetPlayerHealth()
+    {
+        return playerHealth;
+    }
+
+    public void SetPlayerHealth(int damage)
+    {
+        playerHealth -= damage;
+        if (playerHealth <= 0)
+        {
+            playerHealth = 0;
+            //show lose screen
+        }
+        FindObjectOfType<HealthDisplay>().UpdateHealthDisplay(playerHealth);
+    }
+
     public bool GetTurretAllowance()
     {
         return FindObjectsOfType<TowerController>().Length < towerLimit; //count number of active towers and give permission to place another one if it's below the set limit
@@ -34,5 +50,6 @@ public class GameSession : MonoBehaviour {
     public void AddToScore(int scoreToAdd)
     {
         score += scoreToAdd;
+        FindObjectOfType<ScoreDisplay>().UpdateScoreDisplay(score);
     }
 }

@@ -11,7 +11,7 @@ public class TowerPlacer : MonoBehaviour {
 
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0) && isPlaceable)
+        if (Input.GetMouseButtonDown(0) && isPlaceable && FindObjectOfType<GameSession>().GetTurretAllowance())
         {
             Instantiate(towerPrefab, transform.position, transform.rotation);
             isPlaceable = false;

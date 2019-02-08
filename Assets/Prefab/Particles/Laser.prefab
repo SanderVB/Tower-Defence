@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1480003473489426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 8.2119665, y: 9.7, z: -2.0684643}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -304,7 +304,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 1.25
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3664,10 +3664,10 @@ ParticleSystem:
       properties: 0
   LightsModule:
     enabled: 0
-    ratio: 0
-    light: {fileID: 0}
+    ratio: 0.1
+    light: {fileID: 108497262783758540, guid: 486add28acd77364296ea95b94183e09, type: 2}
     randomDistribution: 1
-    color: 1
+    color: 0
     range: 1
     intensity: 1
     rangeCurve:
