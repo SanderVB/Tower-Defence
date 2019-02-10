@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1214764912676382}
+  m_RootGameObject: {fileID: 1913766041498450}
   m_IsPrefabAsset: 1
---- !u!1 &1214764912676382
+--- !u!1 &1913766041498450
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4980664565578476}
-  - component: {fileID: 114088401478491528}
+  - component: {fileID: 4737208539416396}
+  - component: {fileID: 114882469460219940}
   m_Layer: 0
-  m_Name: GameSession
+  m_Name: TowerFactory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4980664565578476
+--- !u!4 &4737208539416396
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1214764912676382}
+  m_GameObject: {fileID: 1913766041498450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,16 +40,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114088401478491528
+--- !u!114 &114882469460219940
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1214764912676382}
+  m_GameObject: {fileID: 1913766041498450}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cec2ee29cea4865448f0af1f51a17a13, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ecb049a692b94b4b9717f3cafa05dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 5
   towerLimit: 5
+  towerPrefab: {fileID: 114128003309817704, guid: a07643dcf9046ed40899dbf2edd9a993,
+    type: 2}

@@ -55,3 +55,4 @@ MonoBehaviour:
   numberToSpawn: 25
   enemyPrefab: {fileID: 114497894772803916, guid: 938eae4333146e448882221468925747,
     type: 2}
+  spawnSound: {fileID: 8300000, guid: af29ef140a382874db484df473a7ec79, type: 3}

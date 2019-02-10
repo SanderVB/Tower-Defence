@@ -5,7 +5,7 @@ using UnityEngine;
 public class ProjectileHandler : MonoBehaviour
 {
     Vector3 explosionLocation;
-    [SerializeField] float destroyTimer = 1f;
+    [SerializeField] float destroyTimer = 1f; //or use vfx.main.duration
     [SerializeField] GameObject projectileExplosion;
     bool hit = false;
 

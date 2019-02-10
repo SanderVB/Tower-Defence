@@ -231,6 +231,7 @@ MonoBehaviour:
   weaponLocation: {fileID: 4283191675857974}
   weaponEffect: {fileID: 198455766723785258, guid: 6faf7365fd52b664c94163be723b4c3e,
     type: 2}
+  fireSound: {fileID: 8300000, guid: bb0d9fda028fd974bb47f7f1db3a0291, type: 3}
   fireCooldown: 1
   weaponDamage: 1
   weaponRange: 25

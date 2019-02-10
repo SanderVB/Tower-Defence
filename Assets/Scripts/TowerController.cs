@@ -7,6 +7,7 @@ public class TowerController : MonoBehaviour {
 
     [SerializeField] Transform objectToPan, target, weaponLocation;
     [SerializeField] ParticleSystem weaponEffect;
+    [SerializeField] AudioClip fireSound;
     [SerializeField] float fireCooldown = 1f;
     [SerializeField] int weaponDamage = 1;
     [SerializeField] float weaponRange = 25f;
@@ -84,6 +85,7 @@ public class TowerController : MonoBehaviour {
             hasFired = true;
             var weapon = Instantiate(weaponEffect, weaponLocation.position, weaponLocation.rotation);
             weapon.Emit(1);
+            AudioSource.PlayClipAtPoint(fireSound, weapon.transform.position);
             yield return new WaitForSeconds(fireCooldown);
             hasFired = false;
         }

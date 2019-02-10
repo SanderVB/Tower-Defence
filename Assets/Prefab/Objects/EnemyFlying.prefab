@@ -411,6 +411,7 @@ MonoBehaviour:
   damageValue: 1
   deathEffect: {fileID: 1469142659871422, guid: ab79a37535b979f48b6de56e3a0a5cb0,
     type: 2}
+  deathSound: {fileID: 8300000, guid: af2ebedd13d9ead4ebbdac8aea01e881, type: 3}
   moveSpeed: 10
   healthBar: {fileID: 1628569074979546}
   barHolder: {fileID: 1504251819928132}

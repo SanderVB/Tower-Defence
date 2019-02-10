@@ -27,6 +27,7 @@ public class TowerFactory : MonoBehaviour
     private void InstantiateNewTower(Transform location)
     {
         var newTower = Instantiate(towerPrefab, location.position, location.rotation);
+        newTower.transform.parent = this.gameObject.transform;
         towerQueue.Enqueue(newTower);
     }
 

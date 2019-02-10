@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour {
     [SerializeField] int scoreValue = 1;
     [SerializeField] int damageValue = 1;
     [SerializeField] GameObject deathEffect;
+    [SerializeField] AudioClip deathSound;
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] GameObject healthBar, barHolder;
 
@@ -114,6 +115,7 @@ public class EnemyController : MonoBehaviour {
             isDying = true;
             GameObject deathFX = Instantiate(deathEffect, transform.position, Quaternion.identity);
             //deathFX.transform.parent = parent;
+            AudioSource.PlayClipAtPoint(deathSound, Camera.main.transform.position);
             Destroy(this.gameObject, destroyTimer / 2);
             Destroy(deathFX, destroyTimer);
         }

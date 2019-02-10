@@ -32,7 +32,8 @@ public class GameSession : MonoBehaviour {
         if (playerHealth <= 0)
         {
             playerHealth = 0;
-            //show lose screen
+            LevelFinished(false);
+            print("0");
         }
         FindObjectOfType<HealthDisplay>().UpdateHealthDisplay(playerHealth);
     }
@@ -46,5 +47,19 @@ public class GameSession : MonoBehaviour {
     {
         score += scoreToAdd;
         FindObjectOfType<ScoreDisplay>().UpdateScoreDisplay(score);
+    }
+
+    public void LevelFinished (bool hasWon)
+    {
+        if(hasWon)
+        {
+            //show win screen and start next level
+            print("Player has won");
+        }
+        else
+        {
+            //show lose screen and restart level/back to main menu
+            print("Player has lost");
+        }
     }
 }
